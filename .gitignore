@@ -2,7 +2,7 @@
 
 # for react.js build scripts:
 build/*
-build/.keep
+!build/.keep
 
 # defaults from github:
 
