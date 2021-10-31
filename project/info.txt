@@ -1,0 +1,50 @@
+# project / info.txt
+
+# - - - 
+# install node:
+sudo -i
+curl --silent --location https://deb.nodesource.com/setup_14.x | bash -
+apt install -y nodejs
+npm install -g npm  # update npm
+
+# - - - 
+# install express (http-server):
+sudo -i
+npm install -g express-generator
+
+# - - - 
+# install pm2 (node preocess manager):
+sudo -i
+npm install -g pm2
+
+# - - - 
+# generate apiserver:
+(as normal user)
+cd apiserver/
+express --no-view .
+npm install
+
+# - - - 
+# install primeReact (from PrimeFaces), with copy template from Sakai:
+# https://www.primefaces.org/sakai-free-react-admin-template/
+# https://github.com/primefaces/sakai-react
+(as normal user)
+cd webui/
+curl -fsLO https://github.com/primefaces/sakai-react/archive/refs/heads/master.zip
+unzip -x master.zip
+cd sakai-react-master/
+mv package.json ..
+mv src/ ..
+mv public/ ..
+cd ..
+rm -rf sakai-react-master/ master.zip
+cd src/
+npm install
+# (above will install all these packages:)
+# npm install primereact --save
+# npm install primeicons --save
+# npm install react-transition-group --save
+# npm install primeflex --save
+
+# - - - 
+#-EOF

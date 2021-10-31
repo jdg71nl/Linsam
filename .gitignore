@@ -1,3 +1,7 @@
+# .gitignore 
+
+# defaults from github:
+
 # Logs
 logs
 *.log
@@ -102,3 +106,5 @@ dist
 
 # TernJS port file
 .tern-port
+
+#-EOF
