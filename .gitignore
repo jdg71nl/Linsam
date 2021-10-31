@@ -1,5 +1,9 @@
 # .gitignore 
 
+# for react.js build scripts:
+build/*
+build/.keep
+
 # defaults from github:
 
 # Logs
