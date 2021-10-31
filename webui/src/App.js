@@ -179,60 +179,62 @@ const App = () => {
                 {label: 'Timeline', icon: 'pi pi-fw pi-calendar', to: '/timeline'},
                 {label: 'Empty', icon: 'pi pi-fw pi-circle-off', to: '/empty'}
             ]
-        },
-        {
-            label: 'Menu Hierarchy', icon: 'pi pi-fw pi-search',
-            items: [
-                {
-                    label: 'Submenu 1', icon: 'pi pi-fw pi-bookmark',
-                    items: [
-                        {
-                            label: 'Submenu 1.1', icon: 'pi pi-fw pi-bookmark',
-                            items: [
-                                {label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-bookmark'},
-                                {label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-bookmark'},
-                                {label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-bookmark'},
-                            ]
-                        },
-                        {
-                            label: 'Submenu 1.2', icon: 'pi pi-fw pi-bookmark',
-                            items: [
-                                {label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark'},
-                                {label: 'Submenu 1.2.2', icon: 'pi pi-fw pi-bookmark'}
-                            ]
-                        },
-                    ]
-                },
-                {
-                    label: 'Submenu 2', icon: 'pi pi-fw pi-bookmark',
-                    items: [
-                        {
-                            label: 'Submenu 2.1', icon: 'pi pi-fw pi-bookmark',
-                            items: [
-                                {label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-bookmark'},
-                                {label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-bookmark'},
-                                {label: 'Submenu 2.1.3', icon: 'pi pi-fw pi-bookmark'},
-                            ]
-                        },
-                        {
-                            label: 'Submenu 2.2', icon: 'pi pi-fw pi-bookmark',
-                            items: [
-                                {label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-bookmark'},
-                                {label: 'Submenu 2.2.2', icon: 'pi pi-fw pi-bookmark'}
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            label: 'Get Started',
-            items: [
-                {label: 'Documentation', icon: 'pi pi-fw pi-question', command: () => {window.location = "#/documentation"}},
-                {label: 'View Source', icon: 'pi pi-fw pi-search', command: () => {window.location = "https://github.com/primefaces/sakai-react"}}
-            ]
         }
     ];
+    const not__menu = [
+      {
+        label: 'Menu Hierarchy', icon: 'pi pi-fw pi-search',
+        items: [
+            {
+                label: 'Submenu 1', icon: 'pi pi-fw pi-bookmark',
+                items: [
+                    {
+                        label: 'Submenu 1.1', icon: 'pi pi-fw pi-bookmark',
+                        items: [
+                            {label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-bookmark'},
+                            {label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-bookmark'},
+                            {label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-bookmark'},
+                        ]
+                    },
+                    {
+                        label: 'Submenu 1.2', icon: 'pi pi-fw pi-bookmark',
+                        items: [
+                            {label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark'},
+                            {label: 'Submenu 1.2.2', icon: 'pi pi-fw pi-bookmark'}
+                        ]
+                    },
+                ]
+            },
+            {
+                label: 'Submenu 2', icon: 'pi pi-fw pi-bookmark',
+                items: [
+                    {
+                        label: 'Submenu 2.1', icon: 'pi pi-fw pi-bookmark',
+                        items: [
+                            {label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-bookmark'},
+                            {label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-bookmark'},
+                            {label: 'Submenu 2.1.3', icon: 'pi pi-fw pi-bookmark'},
+                        ]
+                    },
+                    {
+                        label: 'Submenu 2.2', icon: 'pi pi-fw pi-bookmark',
+                        items: [
+                            {label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-bookmark'},
+                            {label: 'Submenu 2.2.2', icon: 'pi pi-fw pi-bookmark'}
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        label: 'Get Started',
+        items: [
+            {label: 'Documentation', icon: 'pi pi-fw pi-question', command: () => {window.location = "#/documentation"}},
+            {label: 'View Source', icon: 'pi pi-fw pi-search', command: () => {window.location = "https://github.com/primefaces/sakai-react"}}
+        ]
+    }
+];
 
     const addClass = (element, className) => {
         if (element.classList)
@@ -289,10 +291,10 @@ const App = () => {
                     <Route path="/timeline" component={TimelineDemo}/>
                     <Route path="/crud" component={Crud}/>
                     <Route path="/empty" component={EmptyPage}/>
-                    <Route path="/documentation" component={Documentation}/>
+                    {/* <Route path="/documentation" component={Documentation}/> */}
                 </div>
 
-                <AppFooter layoutColorMode={layoutColorMode}/>
+                {/* <AppFooter layoutColorMode={layoutColorMode}/> */}
             </div>
 
             <AppConfig rippleEffect={ripple} onRippleEffect={onRipple} inputStyle={inputStyle} onInputStyleChange={onInputStyleChange}
